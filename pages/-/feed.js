@@ -17,7 +17,7 @@ export async function getServerSideProps ({ res }) {
   await db.sync()
 
   const posts = [...db.posts.values()].map(post => post.json())
-  const xmlFeed = await generateRss(posts.slice(0, 10))
+  const xmlFeed = await generateRss(posts.slice(0, 5))
   res.setHeader('Content-Type', 'text/xml')
   res.write(xmlFeed)
   res.end()
