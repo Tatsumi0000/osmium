@@ -1,4 +1,5 @@
 import 'react-notion-x/src/styles.css'
+import 'prismjs/themes/prism.css'
 import { useEffect } from 'react'
 import App from 'next/app'
 import '@/styles/globals.scss'
