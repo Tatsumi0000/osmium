@@ -7,7 +7,7 @@ const { NOTION_ACCESS_TOKEN, NOTION_ACTIVE_USER } = process.env
 
 const client = new NotionAPI({
   activeUser:NOTION_ACTIVE_USER,
-  authToken: NOTION_ACCESS_TOKEN
+  authToken: NOTION_ACCESS_TOKEN,
 })
 
 const PROXIED_METHODS = [
