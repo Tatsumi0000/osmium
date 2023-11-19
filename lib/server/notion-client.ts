@@ -3,12 +3,9 @@ import { resolve } from 'node:path'
 import chokidar from 'chokidar'
 import { NotionAPI } from 'notion-client'
 
-const { NOTION_ACCESS_TOKEN, NOTION_ACTIVE_USER } = process.env
+const { NOTION_ACCESS_TOKEN } = process.env
 
-const client = new NotionAPI({
-  activeUser:NOTION_ACTIVE_USER,
-  authToken: NOTION_ACCESS_TOKEN,
-})
+const client = new NotionAPI({ authToken: NOTION_ACCESS_TOKEN })
 
 const PROXIED_METHODS = [
   'getPage',
