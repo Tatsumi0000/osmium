@@ -7,7 +7,7 @@ setup:
   docker run -it -v $(PWD):/app osmium /bin/bash -c "npm run postbuild"
 
 dev:
-	docker run -it -v $(PWD):/app -p 3000:3000 osmium /bin/bash -c "npm run dev"
+	docker run -it -v $(PWD):/app -p 8000:3000 osmium /bin/bash -c "npm run dev"
 
 # EXAMPLE: make npm-install PARAM=package-name
 PARAM :=
