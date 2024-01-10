@@ -62,8 +62,7 @@ export default class Database {
 
   // RSSで特定の件数だけ取得したいので、syncとは別に用意
   async rssSync(count: number = 5) {
-    let count_copy = count;
-    await this.data.sync();
+    await this.data.rssSync(count);
 
     for (const [id, record] of this.data.records) {
       const page = new Page(record);
@@ -86,7 +85,6 @@ export default class Database {
             case "Post":
             case "Doc":
               this.posts.set(id, page);
-              count_copy--;
               break;
             case "Page":
               this.pages.set(id, page);
@@ -95,9 +93,6 @@ export default class Database {
           break;
         default:
           continue;
-      }
-      if (count_copy <= 0) {
-        return
       }
     }
   }

@@ -14,17 +14,12 @@ export async function getServerSideProps({ res }) {
   }
 
   const db = new Database();
-  await db.rssSync();
+  await db.rssSync(3);
 
-  console.log("start generating rss..");
-  console.log(new Date().toISOString().replace("T", " ").substr(0, 19));
-
-  const posts = [...db.posts.values()].slice(0, 3).map((post) => post.json());
+  const posts = [...db.posts.values()].map((post) => post.json());
   const xmlFeed = await generateRss(posts);
   res.setHeader("Content-Type", "text/xml");
   res.write(xmlFeed);
-  console.log(new Date().toISOString().replace("T", " ").substr(0, 19));
-  console.log("finish generating rss..")
 
   res.end();
   return NOTHING;
