@@ -1,35 +1,36 @@
-import { Feed } from 'feed'
-import ReactDOMServer from 'react-dom/server'
-import { clientConfig, config } from '@/lib/server/config'
-import api from '@/lib/server/notion-client'
-import { ConfigProvider } from '@/contexts/config'
-import { DataProvider } from '@/contexts/data'
-import { action as getData } from '@/pages/api/data'
-import NotionRenderer from '@/components/NotionRenderer'
+import { Feed } from "feed";
+import ReactDOMServer from "react-dom/server";
+import { clientConfig, config } from "@/lib/server/config";
+import api from "@/lib/server/notion-client";
+import { ConfigProvider } from "@/contexts/config";
+import { DataProvider } from "@/contexts/data";
+import { action as getData } from "@/pages/api/data";
+import NotionRenderer from "@/components/NotionRenderer";
 
-const createFeedContent = async post => {
-  const data = await getData()
+const createFeedContent = async (post) => {
+  const data = await getData();
 
   const content = ReactDOMServer.renderToString(
     <ConfigProvider value={clientConfig}>
       <DataProvider data={data} noRouter>
-        <NotionRenderer recordMap={await api.getPage(post.id)}/>,
+        <NotionRenderer recordMap={await api.getPage(post.id)} />,
       </DataProvider>
-    </ConfigProvider>
-  )
+    </ConfigProvider>,
+  );
   // FIXME: Need a better solution
-  const regexExp = /<div class="notion-collection-row"><div class="notion-collection-row-body"><div class="notion-collection-row-property"><div class="notion-collection-column-title"><svg.*?class="notion-collection-column-title-icon">.*?<\/svg><div class="notion-collection-column-title-body">.*?<\/div><\/div><div class="notion-collection-row-value">.*?<\/div><\/div><\/div><\/div>/g
-  return content.replace(regexExp, '')
-}
+  const regexExp =
+    /<div class="notion-collection-row"><div class="notion-collection-row-body"><div class="notion-collection-row-property"><div class="notion-collection-column-title"><svg.*?class="notion-collection-column-title-icon">.*?<\/svg><div class="notion-collection-column-title-body">.*?<\/div><\/div><div class="notion-collection-row-value">.*?<\/div><\/div><\/div><\/div>/g;
+  return content.replace(regexExp, "");
+};
 
-export async function generateRss (posts) {
-  const year = new Date().getFullYear()
+export async function generateRss(posts) {
+  const year = new Date().getFullYear();
   const feed = new Feed({
     title: config.title,
     description: config.description,
     // FIXME: Need to normalize
-    id: `${config.link}/${config.path || ''}`,
-    link: `${config.link}/${config.path || ''}`,
+    id: `${config.link}/${config.path || ""}`,
+    link: `${config.link}/${config.path || ""}`,
     language: config.lang,
     favicon: `${config.link}/favicon.svg`,
     copyright: `All rights reserved ${year}, ${config.author}`,
@@ -38,7 +39,7 @@ export async function generateRss (posts) {
       email: config.email,
       link: config.link,
     },
-  })
+  });
   for (const post of posts) {
     feed.addItem({
       title: post.title,
@@ -47,7 +48,7 @@ export async function generateRss (posts) {
       description: post.summary,
       content: await createFeedContent(post),
       date: new Date(post.date),
-    })
+    });
   }
-  return feed.atom1()
+  return feed.atom1();
 }
