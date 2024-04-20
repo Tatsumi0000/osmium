@@ -14,4 +14,5 @@ export function loadLocale (lang: string): Promise<Osmium.LocaleData> {
 export const langs: [string, string][] = [
   ['en-US', 'English'],
   ['zh-CN', '中文（中国大陆）'],
+  ['ja-JP', '日本語'],
 ]
