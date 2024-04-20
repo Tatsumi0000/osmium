@@ -1,10 +1,10 @@
-import { ReactCusdis } from 'react-cusdis'
-import { useRouter } from 'next/router'
-import { useConfig } from '@/contexts/config'
+import { ReactCusdis } from "react-cusdis";
+import { useRouter } from "next/router";
+import { useConfig } from "@/contexts/config";
 
-export default function Cusdis ({ config, post }) {
-  const router = useRouter()
-  const { link, lang, appearance } = useConfig()
+export default function Cusdis({ config, post }) {
+  const router = useRouter();
+  const { link, lang, appearance } = useConfig();
 
   return (
     <ReactCusdis
@@ -17,9 +17,18 @@ export default function Cusdis ({ config, post }) {
       }}
       lang={resolveLang(lang)}
     />
-  )
+  );
 }
 
-function resolveLang (lang) {
-  return lang.toLowerCase().startsWith('zh') ? 'zh-cn' : 'en'
+function resolveLang(lang) {
+  switch (lang.toLowerCase()) {
+    case "zh":
+      return "zh-cn";
+    case "ja":
+      return "ja";
+    case "en":
+      return "en";
+    default:
+      return "en";
+  }
 }

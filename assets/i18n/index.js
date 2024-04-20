@@ -16,4 +16,5 @@ export default function loadLocale (section, lang) {
 export const langs = [
   ['en-US', 'English'],
   ['zh-CN', '中文（中国大陆）'],
+  ['ja-JP', '日本語'],
 ]

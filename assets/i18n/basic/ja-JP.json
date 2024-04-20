@@ -1,0 +1,35 @@
+{
+  "NAV": {
+    "BACK_TO_HOME": "Back to home",
+    "INDEX": "Posts",
+    "RSS": "RSS",
+    "SEARCH": "Search",
+    "ABOUT": "About"
+  },
+  "PAGINATION": {
+    "PREV": "Prev",
+    "NEXT": "Next"
+  },
+  "PAGE": {
+    "SEARCH": {
+      "INPUT_PLACEHOLDER": {
+        "SEARCH_ARTICLES": "Search articles",
+        "SEARCH_IN_TAG": "Search in #%s"
+      },
+      "NO_DATA": "No posts found"
+    },
+    "ERROR_404": {
+      "MESSAGE": "Nothing here"
+    }
+  },
+  "THEME": {
+    "LIGHT": "Light",
+    "DARK": "Dark",
+    "SYSTEM": "System"
+  },
+  "DOCS": {
+    "POST": {
+      "LAST_UPDATE": "Last update"
+    }
+  }
+}
