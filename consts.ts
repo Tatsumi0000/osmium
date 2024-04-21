@@ -12,17 +12,6 @@ exports.FONTS_SANS = [
   '"Nimbus Sans L"',
   'Arial',
   '"Liberation Sans"',
-  '"PingFang SC"',
-  '"Hiragino Sans GB"',
-  '"Noto Sans CJK SC"',
-  '"Source Han Sans SC"',
-  '"Source Han Sans CN"',
-  '"Microsoft YaHei"',
-  '"Wenquanyi Micro Hei"',
-  '"WenQuanYi Zen Hei"',
-  '"ST Heiti"',
-  'SimHei',
-  '"WenQuanYi Zen Hei Sharp"',
   'sans-serif',
 ]
 exports.FONTS_SERIF = [
