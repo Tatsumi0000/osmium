@@ -1,5 +1,4 @@
 exports.FONTS_SANS = [
-  '"Noto Sans JP"',
   'ui-sans-serif',
   'system-ui',
   '-apple-system',
