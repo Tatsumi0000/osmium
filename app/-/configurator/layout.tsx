@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Osmium Configurator',
   description: 'The Osmium config generator',
+  robots: { index: false },
 }
 
 import Link from 'next/link'
