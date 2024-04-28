@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 export default function BlogLayout ({ children }: { children: ReactNode }) {
   const { current: post } = useData()
   const router = useRouter()
-  const isNoIndex = exclude.includes(router.asPath)
+  const isNoIndex = exclude.some(pattern => new RegExp(pattern).test(router.asPath)) 
 
   return <>
     <LayoutHead post={post} noIndex={isNoIndex}/>
