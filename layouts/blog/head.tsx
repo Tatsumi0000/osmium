@@ -7,9 +7,10 @@ import { useConfig } from '@/contexts/config'
 
 type Props = {
   post?: PageMeta
+  noIndex?: boolean
 }
 
-export default function LayoutHead ({ post = {} as PageMeta }: Props) {
+export default function LayoutHead ({ post = {} as PageMeta, noIndex = false}: Props) {
   const config = useConfig()
 
   const title = post.title || config.title
@@ -25,8 +26,8 @@ export default function LayoutHead ({ post = {} as PageMeta }: Props) {
   return (
     <Head>
       <title>{title}</title>
-
-      <meta name="robots" content="follow, index"/>
+      {noIndex ? <meta name="robots" content="nofollow, noindex"/> : 
+      <meta name="robots" content="follow, index"/> }
 
       {config.seo?.keywords && (
         <meta name="keywords" content={config.seo.keywords.join(',')}/>
