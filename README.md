@@ -19,6 +19,7 @@
   - Limit the number of RSS fetches to 5.
   - Japanese font support. Ddelete Chinese font.
   - Migrate pnpm to npm.
+    - Change the Vercel install command to `npm install --legacy-peer-deps`.
   - Added no-index and exclude from sitemap.
     - Added path to next-sitemap.config.js -> exclude.
 
@@ -30,6 +31,8 @@
   - 代わりに中華フォントの設定を削除
 - pnpmをnpmで動かすようにした
   - 依存ライブラリのバージョンの影響でどうしてもpnpmで動かしきれなかったです
+  - Vercelのinstallコマンドを`npm install --legacy-peer-deps`に変更してください。
+    - Vercel上の `Project Settings` -> `Install Command`に追加してください。
 - no-indexとsitemapから除外する設定を追加
   - next-sitemap.config.jsのexcludeにパスを追加します。これによってsitemapの除外設定とそのURLのページにno-indexを追加します。
 </details>
