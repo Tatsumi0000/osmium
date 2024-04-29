@@ -1,7 +1,7 @@
-diff --git a/build/index.js b/build/index.js
-index a18bcfde162936c6f9c95c1387369d9bb43b5fff..f6b7c4ad799ea7c78c237a77f0bb578c1f2eb74a 100644
---- a/build/index.js
-+++ b/build/index.js
+diff --git a/node_modules/react-notion-x/build/index.js b/node_modules/react-notion-x/build/index.js
+index a18bcfd..f6b7c4a 100644
+--- a/node_modules/react-notion-x/build/index.js
++++ b/node_modules/react-notion-x/build/index.js
 @@ -2270,12 +2270,12 @@ var Block = (props) => {
          className: cs("notion-hr", blockId)
        });
@@ -27,10 +27,10 @@ index a18bcfde162936c6f9c95c1387369d9bb43b5fff..f6b7c4ad799ea7c78c237a77f0bb578c
        if (true) {
          console.log(
            "Unsupported type " + block.type,
-diff --git a/build/third-party/equation.js b/build/third-party/equation.js
-index 3a41f237f74ec4cecc26c853c45283710b2908ab..3fdaf22d01cd5e41be239cc1a52c69601bebdf2e 100644
---- a/build/third-party/equation.js
-+++ b/build/third-party/equation.js
+diff --git a/node_modules/react-notion-x/build/third-party/equation.js b/node_modules/react-notion-x/build/third-party/equation.js
+index 3a41f23..3fdaf22 100644
+--- a/node_modules/react-notion-x/build/third-party/equation.js
++++ b/node_modules/react-notion-x/build/third-party/equation.js
 @@ -1771,7 +1771,7 @@ var Equation = (_a) => {
      )
    }, /* @__PURE__ */ React21.createElement(Katex, __spreadValues({
