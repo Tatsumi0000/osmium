@@ -25,6 +25,7 @@
 
 <details>
     <summary>日本語</summary>
+
 - RSSの取得件数を5件に絞る
   - Vercelのタイムアウト十秒に引っかかるのでRSSの件数を絞ってます
 - 日本語フォントへの対応
@@ -35,6 +36,7 @@
     - Vercel上の `Project Settings` -> `Install Command`に追加してください。
 - no-indexとsitemapから除外する設定を追加
   - next-sitemap.config.jsのexcludeにパスを追加します。これによってsitemapの除外設定とそのURLのページにno-indexを追加します。
+
 </details>
 
 # Highlights
