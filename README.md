@@ -14,6 +14,26 @@
 
 ---
 
+# Diff
+- [osmium-blog/osmium](https://github.com/osmium-blog/osmium) to customization.
+  - Limit the number of RSS fetches to 5.
+  - Japanese font support. Ddelete Chinese font.
+  - Migrate pnpm to npm.
+  - Added no-index and exclude from sitemap.
+    - Added path to next-sitemap.config.js -> exclude.
+
+<details>
+    <summary>日本語</summary>
+- RSSの取得件数を5件に絞る
+  - Vercelのタイムアウト十秒に引っかかるのでRSSの件数を絞ってます
+- 日本語フォントへの対応
+  - 代わりに中華フォントの設定を削除
+- pnpmをnpmで動かすようにした
+  - 依存ライブラリのバージョンの影響でどうしてもpnpmで動かしきれなかったです
+- no-indexとsitemapから除外する設定を追加
+  - next-sitemap.config.jsのexcludeにパスを追加します。これによってsitemapの除外設定とそのURLのページにno-indexを追加します。
+</details>
+
 # Highlights
 
 ### 🚀 It’s fast
